@@ -128,7 +128,9 @@ CI_API extern PFNGLXGETPROCADDRESSARBPROC _funcptr_glXGetProcAddressARB;
 
 typedef void (CODEGEN_FUNCPTR * PFNGLXFREECONTEXTEXTPROC)(Display * dpy, GLXContext context);
 typedef GLXContextID (CODEGEN_FUNCPTR * PFNGLXGETCONTEXTIDEXTPROC)(const GLXContext context);
+#ifndef __glx_glxext_h_
 typedef Display * (CODEGEN_FUNCPTR * PFNGLXGETCURRENTDISPLAYEXTPROC)();
+#endif
 typedef GLXContext (CODEGEN_FUNCPTR * PFNGLXIMPORTCONTEXTEXTPROC)(Display * dpy, GLXContextID contextID);
 typedef int (CODEGEN_FUNCPTR * PFNGLXQUERYCONTEXTINFOEXTPROC)(Display * dpy, GLXContext context, int attribute, int * value);
 
@@ -487,7 +489,10 @@ typedef void (CODEGEN_FUNCPTR * PFNGLXCUSHIONSGIPROC)(Display * dpy, Window wind
 CI_API extern PFNGLXCUSHIONSGIPROC _funcptr_glXCushionSGI;
 #define glXCushionSGI _funcptr_glXCushionSGI
 
+
+#ifndef __glx_glxext_h_
 typedef GLXDrawable (CODEGEN_FUNCPTR * PFNGLXGETCURRENTREADDRAWABLESGIPROC)();
+#endif
 typedef Bool (CODEGEN_FUNCPTR * PFNGLXMAKECURRENTREADSGIPROC)(Display * dpy, GLXDrawable draw, GLXDrawable read, GLXContext ctx);
 
 CI_API extern PFNGLXGETCURRENTREADDRAWABLESGIPROC _funcptr_glXGetCurrentReadDrawableSGI;
